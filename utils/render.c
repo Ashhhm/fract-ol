@@ -1,14 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string.c                                           :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 12:33:37 by hammeah           #+#    #+#             */
-/*   Updated: 2026/02/10 12:33:53 by hammeah          ###   ########.fr       */
+/*   Created: 2026/02/10 23:14:15 by hammeah           #+#    #+#             */
+/*   Updated: 2026/02/11 17:25:04 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../header/fractol.h"
 
+void	fractal_create(t_fract *fractol)
+{
+    
+    
+    
+}
+
+void    data_create(t_fract *fractol)
+{
+    
+}
