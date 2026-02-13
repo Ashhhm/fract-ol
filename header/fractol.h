@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:09:53 by hammeah           #+#    #+#             */
-/*   Updated: 2026/02/11 17:23:33 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/02/13 11:01:47 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,12 @@ void		fract_screen(t_fract *fractol);
 
 /*render.c*/
 void        fractal_create(t_fract *fractol);
+void    get_pixel(int x, int y, t_fract *fractol);
+double  get_scale(double u_num, double n_min, double n_max, double o_max);
+
+
+/*math.c*/
+t_com  com_square(t_com z);
+t_com   com_sum(t_com z1, t_com z2);
 
 #endif
