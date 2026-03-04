@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 10:44:45 by hammeah           #+#    #+#             */
-/*   Updated: 2026/02/11 15:27:33 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/02/20 14:30:04 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	main(int ac, char **av)
 		|| (ac == 4 && !ft_strncmp(av[1], "julia", 5)))
 	{
 		fractol.title = av[1];
-		write(1, "inside", 6); // function_call to create fractol
+		fract_init(&fractol);
+		fractal_create(&fractol);
+		mlx_loop(fractol.mlx_connect);
 	}
 	else
 	{
