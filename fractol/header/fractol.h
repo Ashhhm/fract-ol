@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:09:53 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/04 18:10:12 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/04 23:14:15 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 
 # include "../mlx-linux/mlx.h"
 # include "../mlx-linux/mlx_int.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <X11/X.h>
-# include <X11/keysym.h>
 
 # define WIDTH 950
 # define HEIGHT 950
 
-#define BLACK       0x000000  
-#define WHITE       0xFFFFFF  
-#define RED         0xFF0000  
-#define GREEN       0x00FF00  
-#define BLUE        0x0000FF  
-#define MAGENTA_BURST   0xFF00FF  
-#define LIME_SHOCK      0xCCFF00  
-#define PSYCHEDELIC_PURPLE 0x660066
-#define MATRIX_GREEN  0x00FF41
+# define BLACK 0x000000
+# define WHITE 0xFFFFFF
+# define RED 0xFF0000
+# define GREEN 0x00FF00
+# define BLUE 0x0000FF
+# define MAGENTA_BURST 0xFF00FF
+# define LIME_SHOCK 0xCCFF00
+# define PSYCHEDELIC_PURPLE 0x660066
+# define MATRIX_GREEN 0x00FF41
 
 typedef struct s_image
 {
@@ -68,22 +68,22 @@ typedef struct s_com
 /*init.c*/
 void		mem_fail(void);
 void		fract_init(t_fract *fractol);
-void    	data_create(t_fract *fractol);
+void		data_create(t_fract *fractol);
 
 /*render.c*/
-void    fractal_create(t_fract *fractol);
-void    get_pixel(int x, int y, t_fract *fractol);
-double  get_scale(double u_num, double n_min, double n_max, double o_max);
-void    ft_my_pixel_put(int x, int y, t_image *img, int col);
+void		fractal_create(t_fract *fractol);
+void		get_pixel(int x, int y, t_fract *fractol);
+double		get_scale(double u_num, double n_min, double n_max, double o_max);
+void		ft_my_pixel_put(int x, int y, t_image *img, int col);
 
 /*math.c*/
-t_com  com_square(t_com z);
-t_com   com_sum(t_com z1, t_com z2);
+t_com		com_square(t_com z);
+t_com		com_sum(t_com z1, t_com z2);
 
 /*event.c*/
-int close_programm(t_fract *fractol);
-int key_manager(int key_value, t_fract *fractol);
-int mouse_manager(int button, t_fract *fractol);
-int julia_mouse_manager(int x, int y, t_fract *fractol);
+int			close_programm(void *param);
+int			key_manager(int key_value, void *param);
+int			mouse_manager(int button, int x, int y, void *param);
+int			julia_mouse_manager(int x, int y, t_fract *fractol);
 
 #endif
