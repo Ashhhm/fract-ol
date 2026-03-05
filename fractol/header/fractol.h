@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:09:53 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/04 23:14:15 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 17:55:10 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,12 @@ void		fractal_create(t_fract *fractol);
 void		get_pixel(int x, int y, t_fract *fractol);
 double		get_scale(double u_num, double n_min, double n_max, double o_max);
 void		ft_my_pixel_put(int x, int y, t_image *img, int col);
+void		ft_julia_set(t_com *z, t_com *c, t_fract *fr);
 
 /*math.c*/
 t_com		com_square(t_com z);
 t_com		com_sum(t_com z1, t_com z2);
+double		d_atoi(char *str);
 
 /*event.c*/
 int			close_programm(void *param);

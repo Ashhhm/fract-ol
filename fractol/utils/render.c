@@ -6,11 +6,12 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 23:14:15 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/04 23:23:20 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 17:59:15 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/fractol.h"
+#include "../libft/libft.h"
 
 void	ft_my_pixel_put(int x, int y, t_image *img, int col)
 {
@@ -28,20 +29,31 @@ double	get_scale(double u_num, double n_min, double n_max, double o_max)
 	return ((n_max - n_min) * (u_num - old_min) / (o_max - old_min) + n_min);
 }
 
+void	ft_julia_set(t_com *z, t_com *c, t_fract *fr)
+{
+	if (!ft_strncmp(fr->title, "julia", 5))
+	{
+		c->r = fr->julia_x;
+		c->i = fr->julia_y;
+	}
+	else
+	{
+		c->r = z->r;
+		c->i = z->i;
+	}
+}
+
 void	get_pixel(int x, int y, t_fract *fr)
 {
 	t_com	z;
 	t_com	c;
 	int		i;
 	int		col;
-	double	s;
 
 	i = 0;
-	z.r = 0.0;
-	z.i = 0.0;
-	s = 4.0 / fr->zoom;
-	c.r = get_scale(x, -s / 2 + fr->shift_x, s / 2 + fr->shift_x, WIDTH - 1);
-	c.i = get_scale(y, -s / 2 + fr->shift_y, s / 2 + fr->shift_y, HEIGHT - 1);
+	z.r = (get_scale(x, -2, 2, WIDTH) * fr->zoom) + fr->shift_x;
+	z.i = (get_scale(x, 2, -2, HEIGHT) * fr->zoom) + fr->shift_y;
+	ft_julia_set(&z, &c, fr);
 	while (i < fr->nb_it)
 	{
 		z = com_sum(com_square(z), c);

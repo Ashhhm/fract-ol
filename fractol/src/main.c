@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 10:44:45 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/04 22:23:24 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 18:03:33 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	main(int ac, char **av)
 		|| (ac == 4 && !ft_strncmp(av[1], "julia", 5)))
 	{
 		fractol.title = av[1];
+		if (!ft_strncmp(av[1], "julia", 5))
+		{
+			fractol.julia_x = d_atoi(av[2]);
+			fractol.julia_x = d_atoi(av[3]);
+		}
 		fract_init(&fractol);
 		fractal_create(&fractol);
 		mlx_loop(fractol.mlx_connect);
@@ -30,7 +35,6 @@ int	main(int ac, char **av)
 	{
 		ft_putstr_fd("error", STDERR_FILENO);
 		exit(EXIT_FAILURE);
-		// function to print error msg;
-		// and exit programme;
 	}
+	return (0);
 }

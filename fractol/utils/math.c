@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 10:51:12 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/04 22:22:14 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 17:55:54 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,33 @@ t_com	com_sum(t_com z1, t_com z2)
 	result.r = z1.r + z2.r;
 	result.i = z1.i + z2.i;
 	return (result);
+}
+
+double	d_atoi(char *str)
+{
+	long	e_r;
+	double	dec;
+	double	vir;
+	int		i;
+	int		sign;
+
+	i = ((e_r = ((dec = 0))));
+	sign = ((vir = 1));
+	while (str[i] == 32 || (str[i] >= 9 && str[i++] <= 13))
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while ((str[i] >= '0' && str[i] <= '9') && str[i])
+		e_r = e_r * 10 + (str[i++] - '0');
+	if (str[i] == '.')
+		i++;
+	while (str[i])
+	{
+		vir /= 10;
+		dec = dec + (str[i++] - '0') * vir;
+	}
+	return ((e_r + dec) * sign);
 }
