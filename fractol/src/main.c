@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 10:44:45 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 18:03:33 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 22:33:10 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(int ac, char **av)
 		fractol.title = av[1];
 		if (!ft_strncmp(av[1], "julia", 5))
 		{
-			fractol.julia_x = d_atoi(av[2]);
-			fractol.julia_x = d_atoi(av[3]);
+			fractol.julia_r = d_atoi(av[2]);
+			fractol.julia_i = d_atoi(av[3]);
 		}
 		fract_init(&fractol);
 		fractal_create(&fractol);
@@ -38,3 +38,4 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+

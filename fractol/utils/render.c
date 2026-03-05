@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 23:14:15 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 17:59:15 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 22:45:49 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_julia_set(t_com *z, t_com *c, t_fract *fr)
 {
 	if (!ft_strncmp(fr->title, "julia", 5))
 	{
-		c->r = fr->julia_x;
-		c->i = fr->julia_y;
+		c->r = fr->julia_r;
+		c->i = fr->julia_i;
 	}
 	else
 	{
@@ -49,11 +49,24 @@ void	get_pixel(int x, int y, t_fract *fr)
 	t_com	c;
 	int		i;
 	int		col;
+	double	s;
 
 	i = 0;
-	z.r = (get_scale(x, -2, 2, WIDTH) * fr->zoom) + fr->shift_x;
-	z.i = (get_scale(x, 2, -2, HEIGHT) * fr->zoom) + fr->shift_y;
-	ft_julia_set(&z, &c, fr);
+	s = 4.0 / fr->zoom;
+	if (!ft_strncmp(fr->title, "mandelbrot", 10))
+	{
+		z.r = 0;
+		z.i = 0;
+		c.r = get_scale(x, -s / 2 + fr->shift_r, s / 2 + fr->shift_r, WIDTH - 1);
+		c.i = get_scale(y, -s / 2 + fr->shift_i, s / 2 + fr->shift_i, HEIGHT - 1);
+	}
+	else
+	{
+		z.r = get_scale(x, -s / 2 + fr->shift_r, s / 2 + fr->shift_r, WIDTH - 1);
+		z.i = get_scale(y, -s / 2 + fr->shift_i, s / 2 + fr->shift_i, HEIGHT - 1);
+		c.r = fr->julia_r;
+		c.i = fr->julia_i;
+	}
 	while (i < fr->nb_it)
 	{
 		z = com_sum(com_square(z), c);

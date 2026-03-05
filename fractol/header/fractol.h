@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:09:53 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 17:55:10 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 22:18:39 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ typedef struct s_fract
 	char	*title;
 	double	esc;
 	int		nb_it;
-	double	shift_x;
-	double	shift_y;
+	double	shift_r;
+	double	shift_i;
 	double	zoom;
-	double	julia_x;
-	double	julia_y;
+	double	julia_r;
+	double	julia_i;
 }			t_fract;
 
 typedef struct s_com

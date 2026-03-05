@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 16:55:31 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 17:16:55 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/05 22:19:14 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	key_manager(int key_value, void *param)
 	if (key_value == XK_Escape)
 		close_programm(fractol);
 	else if (key_value == XK_Left)
-		fractol->shift_x += (0.5 * fractol->zoom);
+		fractol->shift_r += (0.5 * fractol->zoom);
 	else if (key_value == XK_Right)
-		fractol->shift_x -= (0.5 * fractol->zoom);
+		fractol->shift_r -= (0.5 * fractol->zoom);
 	else if (key_value == XK_Up)
-		fractol->shift_y += (0.5 * fractol->zoom);
+		fractol->shift_i += (0.5 * fractol->zoom);
 	else if (key_value == XK_Down)
-		fractol->shift_y -= (0.5 * fractol->zoom);
+		fractol->shift_i -= (0.5 * fractol->zoom);
 	else if (key_value == XK_plus)
 		fractol->nb_it += 10;
 	else if (key_value == XK_minus)
@@ -72,10 +72,10 @@ int	julia_mouse_manager(int x, int y, t_fract *fractol)
 {
 	if (!ft_strncmp(fractol->title, "julia", 5))
 	{
-		fractol->julia_x = (get_scale(x, -2, 2, WIDTH) * fractol->zoom)
-			+ fractol->shift_x;
-		fractol->julia_y = (get_scale(y, 2, -2, HEIGHT) * fractol->zoom)
-			+ fractol->shift_y;
+		fractol->julia_r = (get_scale(x, -2, 2, WIDTH) * fractol->zoom)
+			+ fractol->shift_r;
+		fractol->julia_i = (get_scale(y, 2, -2, HEIGHT) * fractol->zoom)
+			+ fractol->shift_i;
 		fractal_create(fractol);
 	}
 	return (0);
