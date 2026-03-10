@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:33:37 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/06 17:09:10 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/10 13:28:34 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	data_create(t_fract *fractol)
  * 
  * @param fractol t_fract struct
  */
+
 void	event_init(t_fract *fractol)
 {
 	mlx_hook(fractol->mlx_window, KeyPress, KeyPressMask, key_manager, fractol);
@@ -42,11 +43,12 @@ void	event_init(t_fract *fractol)
 		julia_mouse_manager, fractol);
 }
 /**
- * @brief creating the window using the mlx API and after we are initiating the t_fract struct
- * with the hook (mouse and keyboard) event.
+ * @brief creating the window using the mlx API and after we are 
+ * initiating the t_fract struct with the hook (mouse and keyboard) event.
  * 
  * @param fractol t_fract struct
  */
+
 void	fract_init(t_fract *fractol)
 {
 	fractol->mlx_connect = mlx_init();

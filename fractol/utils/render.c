@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 23:14:15 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/06 17:13:16 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/10 13:29:29 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_my_pixel_put(int x, int y, t_image *img, int col)
  * @param o_max old max value
  * @return double scaled value for each x and y 
  */
+
 double	get_scale(double u_num, double n_min, double n_max, double o_max)
 {
 	double	old_min;

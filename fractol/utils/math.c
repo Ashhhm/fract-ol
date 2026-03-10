@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 10:51:12 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 17:55:54 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/10 13:39:48 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ double	d_atoi(char *str)
 	int		i;
 	int		sign;
 
-	i = ((e_r = ((dec = 0))));
-	sign = ((vir = 1));
-	while (str[i] == 32 || (str[i] >= 9 && str[i++] <= 13))
+	(1 && (dec = 0), (e_r = 0), (i = 0), (sign = 1), (vir = 1));
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
