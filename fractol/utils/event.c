@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 16:55:31 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 22:19:14 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/06 17:18:15 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	key_manager(int key_value, void *param)
 	else if (key_value == XK_Right)
 		fractol->shift_r -= (0.5 * fractol->zoom);
 	else if (key_value == XK_Up)
-		fractol->shift_i += (0.5 * fractol->zoom);
-	else if (key_value == XK_Down)
 		fractol->shift_i -= (0.5 * fractol->zoom);
+	else if (key_value == XK_Down)
+		fractol->shift_i += (0.5 * fractol->zoom);
 	else if (key_value == XK_plus)
 		fractol->nb_it += 10;
 	else if (key_value == XK_minus)
@@ -60,9 +60,9 @@ int	mouse_manager(int button, int x, int y, void *param)
 		fractol->zoom = 100;
 	else if (fractol->zoom < 0.5)
 		fractol->zoom = 0.5;
-	else if (button == Button5)
-		fractol->zoom *= 0.90;
 	else if (button == Button4)
+		fractol->zoom *= 0.95;
+	else if (button == Button5)
 		fractol->zoom *= 1.05;
 	fractal_create(fractol);
 	return (0);

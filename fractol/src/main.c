@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 10:44:45 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 22:33:10 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/06 16:37:50 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int ac, char **av)
 	t_fract	fractol;
 
 	if ((ac == 2 && !ft_strncmp(av[1], "mandelbrot", 10))
-		// change the strncmp function;
 		|| (ac == 4 && !ft_strncmp(av[1], "julia", 5)))
 	{
 		fractol.title = av[1];
@@ -33,7 +32,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		ft_putstr_fd("error", STDERR_FILENO);
+		ft_putstr_fd(ERR_MSG, STDERR_FILENO);
 		exit(EXIT_FAILURE);
 	}
 	return (0);

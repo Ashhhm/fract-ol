@@ -6,7 +6,7 @@
 /*   By: hammeah <hammeah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:09:53 by hammeah           #+#    #+#             */
-/*   Updated: 2026/03/05 22:18:39 by hammeah          ###   ########.fr       */
+/*   Updated: 2026/03/06 17:12:01 by hammeah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define ERR_MSG "Invalid argument. Please enter one of the following command :\n ./fractol mandelbrot or ./fractol julia <real number value> <imaginary number value>\n"
 # define WIDTH 950
 # define HEIGHT 950
 
